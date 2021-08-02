@@ -1,3 +1,75 @@
 body {
     background: lightblue;
 }
+img {
+    height: 50%;
+    width: 50%;
+}
+.button {
+    width: 39%;
+    padding: 10px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    margin: 20px;
+}
+#start-screen button{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    height: 30px;
+    width: 100px;
+
+}
+#game-screen img{
+    height: 500px;
+    width: 500px;
+}
+#buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+}
+#start-screen{
+    margin: 0 auto;
+}
+
+#game-screen{
+    width: 50%;
+    margin: 0 auto;
+}
+.hide {
+    display: none;
+}
+
+/* Media Queries */
+@media screen and (min-width: 1200px) {
+    body {
+        background: white;
+    }
+}
+@media screen and (max-width: 1024px) {
+    body {
+        background: blue;
+    }
+@media screen and (max-width: 768px) {
+    body {
+        background: yellow;
+    }
+}
+}
+@media screen and (max-width: 480px) {
+    body {
+        background: red;
+    }
+    .button {
+        width: 100%;
+        padding: 10px;
+        border-radius: 50px;
+        outline: none;
+        border: none;
+        margin: 10px;
+    }
+}
