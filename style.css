@@ -24,10 +24,48 @@ img {
     justify-content: center;
     margin: 0 auto;
 }
+.direction{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    width: 40px;
+    height: 100px;
+    font-size: 20px;
+}
+.button{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 100px;
+    border-radius: 50px;
+    outline: none;
+    border: 2px solid black;
+    margin: 0px;
+}
+#responses{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#easy-button {
+    background: #42a2d6;
+}
+#medium-button {
+    background: #ffdc00;
+}
+#hard-button {
+    background: #ff4238;
+}
 #game-screen{
     width: 50%;
     text-align: center;
-    margin: 100px auto;
+    margin: 10px auto;
 }
 #game-screen img{
     max-width: 500px;
@@ -38,27 +76,6 @@ img {
 #start-screen{
     text-align: center;
     margin: 0 auto;
-}
-button{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
-    height: 30px;
-    width: 100px;
-    border-radius: 50px;
-    outline: none;
-    border: 2px solid black;
-    margin: 10px;
-}
-#easy-button {
-    background: #42a2d6;
-}
-#medium-button {
-    background: #ffdc00;
-}
-#hard-button {
-    background: #ff4238;
 }
 
 
