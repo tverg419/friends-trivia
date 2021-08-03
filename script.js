@@ -1,16 +1,5 @@
 //  Question Banks
-/*
-Format of question with four responses
-    {
-        question: '',
-        answers: [
-            {answer: '', correct: false},
-            {answer: '', correct: false},
-            {answer: '', correct: false},
-            {answer: '', correct: false}
-        ]
-    },
-*/
+
 const questions = [
     {
         question: 'How many main characters are in Friends?',
@@ -58,68 +47,20 @@ const questions = [
         ]
     }
 ]
-// const questionsMedium = [
-//     {
-//         question: 'What two pets does Joey give Chandler?',
-//         answers: [
-//             {answer: 'A cat and a mouse',   correct: false},
-//             {answer: 'A cat and a dog',     correct: false},
-//             {answer: 'A chick and a duck',  correct: true},
-//             {answer: 'A cat and a chick',   correct: false}
-//         ]
-//     },
-//     {
-//         question: 'How many seasons did Friends run for?',
-//         answers: [
-//             {answer: '4',  correct: false},
-//             {answer: '6',  correct: false},
-//             {answer: '8',  correct: false},
-//             {answer: '10', correct: true}
-//         ]
-//     },
-//     {
-//         question: "What is the name of Joey's stuffed penguin?",
-//         answers: [
-//             {answer: 'Hugsy',   correct: true},
-//             {answer: 'Flipper', correct: false},
-//             {answer: 'Pengy',   correct: false},
-//             {answer: 'Gunther', correct: false}
-//         ]
-//     },
-//     {
-//         question: 'Which character has twin sibling?',
-//         answers: [
-//             {answer: 'Rachel',   correct: false},
-//             {answer: 'Joey',     correct: false},
-//             {answer: 'Phoebe',   correct: true},
-//             {answer: 'Chandler', correct: false}
-//         ]
-//     },
-//     {
-//         question: "Which character said 'PIVOT!'?",
-//         answers: [
-//             {answer: 'Ross',     correct: true},
-//             {answer: 'Chandler', correct: false},
-//             {answer: 'Monica',   correct: false},
-//             {answer: 'Joey',     correct: false}
-//         ]
-//     }
-// ]
 
 const startScreen = document.querySelector('#start-screen')
 const gameScreen = document.querySelector('#game-screen')
 
-const startButton = document.querySelector('#easy-button')
-// const mediumButton = document.querySelector('#medium-button')
-// const hardButton = document.querySelector('#hard-button')
-// const startButtons = [easyButton, mediumButton, hardButton]
+const startButton = document.querySelector('#start-button')
 
 const questionImage = document.querySelector('#question-image')
 const questionField = document.querySelector('#question')
 const answers = document.querySelectorAll('.response')
 const backButton = document.querySelector('#back-button')
 const nextButton = document.querySelector('#next-button')
+const counter = document.querySelector('#counter')
 let currentQuestion = 0;
+let count = 0;
 
 function getImage(index) {
     let source = `assets/q${index}.jpeg`
@@ -138,6 +79,20 @@ function changePage(currentQuestion) {
     getQuestion(currentQuestion)
     getAnswers(currentQuestion)
 }
+function checkAnswer(question, index) {
+    if (questions[question].answers[index].correct == true) {
+        count++
+    }
+}
+function showAnswers(question) {
+    for (let i = 0; i < answers.length; i++) {
+        if (questions[question].answers[i].correct == true) {
+            answers[i].classList.add('correct')
+        } else {
+            answers[i].classList.add('incorrect')      
+        }
+    }
+}
 
 startButton.addEventListener('click', function () {
         startScreen.classList.add('hide')
@@ -153,13 +108,23 @@ backButton.addEventListener('click', function () {
     }
 })
 nextButton.addEventListener('click', function () {
-    if(currentQuestion === questions.length){
+    if(currentQuestion === questions.length - 1){
         return null
     } else {
+        for (let i = 0; i < answers.length; i++) {
+            if (questions[currentQuestion].answers[i].correct == true) {
+                answers[i].classList.remove('correct')
+            } else {
+                answers[i].classList.remove('incorrect')      
+            }
+        }
         currentQuestion++;
         changePage(currentQuestion)
     }
 })
-    // startButtons.forEach(button => button.addEventListener('click', function () {
-// }))
-console.log('Working')
+
+answers.forEach(answer => answer.addEventListener('click', function(e) {
+    checkAnswer(currentQuestion, e.target.value)
+    showAnswers(currentQuestion)
+    answers.forEach(button => button.disabled == true)
+}))
