@@ -117,6 +117,9 @@ const startButton = document.querySelector('#easy-button')
 const questionImage = document.querySelector('#question-image')
 const questionField = document.querySelector('#question')
 const answers = document.querySelectorAll('.response')
+const backButton = document.querySelector('#back-button')
+const nextButton = document.querySelector('#next-button')
+let currentQuestion = 0;
 
 function getImage(index) {
     let source = `assets/q${index}.jpeg`
@@ -130,20 +133,33 @@ function getAnswers(index) {
             answers[i].innerHTML = questions[index].answers[i].answer
         }
 }
-function changePage() {
-    getImage(0)
-    getQuestion(0)
-    getAnswers(0)
+function changePage(currentQuestion) {
+    getImage(currentQuestion)
+    getQuestion(currentQuestion)
+    getAnswers(currentQuestion)
 }
-
-let timer = setInterval(changePage, 2000)
 
 startButton.addEventListener('click', function () {
         startScreen.classList.add('hide')
         gameScreen.classList.remove('hide')
+        changePage(currentQuestion)
 })
-
+backButton.addEventListener('click', function () {
+    if(currentQuestion === 0){
+        return null
+    } else {
+        currentQuestion--;
+        changePage(currentQuestion)
+    }
+})
+nextButton.addEventListener('click', function () {
+    if(currentQuestion === questions.length){
+        return null
+    } else {
+        currentQuestion++;
+        changePage(currentQuestion)
+    }
+})
     // startButtons.forEach(button => button.addEventListener('click', function () {
 // }))
-console.log(answers[0].innerHTML)
 console.log('Working')
