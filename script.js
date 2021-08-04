@@ -1,16 +1,4 @@
 //  Question Banks
-/*
-Format of question with four responses
-    {
-        question: '',
-        answers: [
-            {answer: '', correct: false},
-            {answer: '', correct: false},
-            {answer: '', correct: false},
-            {answer: '', correct: false}
-        ]
-    },
-*/
 const questions = [
     {
         question: 'How many main characters are in Friends?',
@@ -27,7 +15,7 @@ const questions = [
             {answer: 'Chandler', correct: false},
             {answer: 'Ross' ,    correct: false},
             {answer: 'Joey' ,    correct: false},
-            {answer: 'Dennis',   correct: true}
+            {answer: 'Matt',   correct: true}
         ]
     },
     {
@@ -40,7 +28,7 @@ const questions = [
         ]
     },
     {
-        question: 'What city does the show take place in?',
+        question: 'Which city does the show take place in?',
         answers: [
             {answer: 'New York City',   correct: true},
             {answer: 'Miami',           correct: false},
@@ -56,52 +44,97 @@ const questions = [
             {answer: 'Cafe NYC',     correct: false},
             {answer: 'Beans',        correct: false}
         ]
+    },
+    {
+        question: 'What two pets does Joey give Chandler?',
+        answers: [
+            {answer: 'A cat and a mouse',   correct: false},
+            {answer: 'A cat and a dog',     correct: false},
+            {answer: 'A chick and a duck',  correct: true},
+            {answer: 'A cat and a chick',   correct: false}
+        ]
+    },
+    {
+        question: 'How many seasons did Friends run for?',
+        answers: [
+            {answer: '4',  correct: false},
+            {answer: '6',  correct: false},
+            {answer: '8',  correct: false},
+            {answer: '10', correct: true}
+        ]
+    },
+    {
+        question: "What is the name of Joey's stuffed penguin?",
+        answers: [
+            {answer: 'Hugsy',   correct: true},
+            {answer: 'Flipper', correct: false},
+            {answer: 'Pengy',   correct: false},
+            {answer: 'Gunther', correct: false}
+        ]
+    },
+    {
+        question: 'Which character has twin sibling?',
+        answers: [
+            {answer: 'Rachel',   correct: false},
+            {answer: 'Phoebe',   correct: true},
+            {answer: 'Joey',     correct: false},
+            {answer: 'Chandler', correct: false}
+        ]
+    },
+    {
+        question: "Which character said 'PIVOT!'?",
+        answers: [
+            {answer: 'Ross',     correct: true},
+            {answer: 'Chandler', correct: false},
+            {answer: 'Rachel',   correct: false},
+            {answer: 'None',     correct: false}
+        ]
+    },
+    {
+        question: "What is the name of Phoebe's original painting?",
+        answers: [
+            {answer: 'Glynnis', correct: false},
+            {answer: 'Gladys',  correct: true},
+            {answer: 'Doris',   correct: false},
+            {answer: 'Phoebo',  correct: false}
+        ]
+    },
+    {
+        question: "What city does the Mama's Little Bakery cheesecake that Rachel and Chandler steal come from?",
+        answers: [
+            {answer: 'Long Island',   correct: false},
+            {answer: 'Chicago',       correct: true},
+            {answer: 'Staten Island', correct: false},
+            {answer: 'Boston',        correct: false}
+        ]
+    },
+    {
+        question: "What are the names of Phoebe's triplets?",
+        answers: [
+            {answer: 'Frank Jr. Jr., Leslie, Chandler', correct: true},
+            {answer: 'Frank Jr., Lester, Chandler',     correct: false},
+            {answer: 'Frank Jr. Jr., Lester, Chandler', correct: false},
+            {answer: 'Frank Jr., Leslie, Chandler',     correct: false}
+        ]
+    },
+    {
+        question: "What did Ross and Chandler call their band in college?",
+        answers: [
+            {answer: 'Way No',     correct: false},
+            {answer: 'No Way Way', correct: false},
+            {answer: 'No way',      correct: false},
+            {answer: 'Way No Way', correct: true}
+        ]
+    },
+    {
+        question: "What is Phoebe's alias?",
+        answers: [
+            {answer: 'Smelly Cat',      correct: false},
+            {answer: 'Regina Peterson', correct: false},
+            {answer: 'Regina Phalange', correct: true},
+            {answer: 'Regina George',   correct: false}
+        ]
     }
-    // {
-    //     question: 'What two pets does Joey give Chandler?',
-    //     answers: [
-    //         {answer: 'A cat and a mouse',   correct: false},
-    //         {answer: 'A cat and a dog',     correct: false},
-    //         {answer: 'A chick and a duck',  correct: true},
-    //         {answer: 'A cat and a chick',   correct: false}
-    //     ]
-    // },
-    // {
-    //     question: 'How many seasons did Friends run for?',
-    //     answers: [
-    //         {answer: '4',  correct: false},
-    //         {answer: '6',  correct: false},
-    //         {answer: '8',  correct: false},
-    //         {answer: '10', correct: true}
-    //     ]
-    // },
-    // {
-    //     question: "What is the name of Joey's stuffed penguin?",
-    //     answers: [
-    //         {answer: 'Hugsy',   correct: true},
-    //         {answer: 'Flipper', correct: false},
-    //         {answer: 'Pengy',   correct: false},
-    //         {answer: 'Gunther', correct: false}
-    //     ]
-    // },
-    // {
-    //     question: 'Which character has twin sibling?',
-    //     answers: [
-    //         {answer: 'Rachel',   correct: false},
-    //         {answer: 'Joey',     correct: false},
-    //         {answer: 'Phoebe',   correct: true},
-    //         {answer: 'Chandler', correct: false}
-    //     ]
-    // },
-    // {
-    //     question: "Which character said 'PIVOT!'?",
-    //     answers: [
-    //         {answer: 'Ross',     correct: true},
-    //         {answer: 'Chandler', correct: false},
-    //         {answer: 'Monica',   correct: false},
-    //         {answer: 'Joey',     correct: false}
-    //     ]
-    // }
 ]
 
 const startButton = document.querySelector('#start-button')
@@ -223,5 +256,3 @@ restartButton.addEventListener('click', function () {
     gameScreen.classList.add('hide')
     gameStats.classList.add('hide')
 })
-
-console.log('Working')
