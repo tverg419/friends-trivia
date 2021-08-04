@@ -13,8 +13,6 @@
         <button class='button' id='start-button'  >Start</button>
     </section>
     <div class='hide' id='game-stats'>
-        <p id='counter'>0</p>
-        <p id='timer'>0:00</p>
     </div>
     <div class='hide' id='game-screen'>
         <img id='question-image' alt="question img">
@@ -30,9 +28,12 @@
             <button class="direction" id='next-button'>&#5125</button>
         </div>
     </div>
-    <section id='game-over-screen'>
-
-    </section>
+    <div id="modal">
+        <div id='game-over-screen'>
+            <p id='counter'></p>
+            <button id='restart-button'>Restart</button>
+        </div>
+    </div>
     <script src='script.js'></script>
 </body>
 </html>
