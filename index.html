@@ -13,26 +13,28 @@
 <body>
     <section id='start-screen'>
         <img src="assets/friends-logo.png" alt="img not found">
+        <h1>Welcome to Friends Trivia</h1>
         <button class='button' id='start-button'  >Start</button>
     </section>
     <div class='hide' id='game-stats'>
     </div>
     <div class='hide' id='game-screen'>
-        <img id='question-image' alt="question img">
-        <h3 id='question'></h3>
+        <img id='question-image' src = 'q.jpeg' alt="question img">
+        <p id='question'></p>
         <div id='responses'>
-            <button class="direction" id='back-button'>&#5130</button>
-            <section id='buttons'>
+            <button class="direction" id='back-button'>&#5130;</button>
+            <div id='buttons'>
                 <button class='response' value='0' id='response-1'>1</button>
                 <button class='response' value='1' id='response-2'>2</button>
                 <button class='response' value='2' id='response-3'>3</button>
                 <button class='response' value='3' id='response-4'>4</button>
-            </section>
-            <button class="direction" id='next-button'>&#5125</button>
+            </div>
+            <button class="direction" id='next-button'>&#5125;</button>
         </div>
     </div>
     <div id="modal">
         <div id='game-over-screen'>
+            <h2>Game Over</h2>
             <p id='counter'></p>
             <button id='restart-button'>Restart</button>
         </div>
