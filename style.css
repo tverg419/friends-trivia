@@ -1,3 +1,6 @@
+body {
+    background-color: lightgray;
+}
 img {
     width: 40%;
     height: auto;
@@ -15,7 +18,7 @@ img {
     font-size: 20px;
 }
 .response:hover{
-    border: 3px solid black;
+    border: 3px solid white;
 }
 .direction{
     display: flex;
@@ -76,41 +79,46 @@ img {
 #start-button {
     background: #42a2d6;
 }
+#game-stats{
+    float: right;
+    position: fixed;
+    font-size: 24px;
+}
+#modal {
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    overflow: auto;
+    display: none;
+}
+#game-over-screen {
+    background-color: #ffdc00;
+    width: 400px;
+    height: 200px;
+    padding: 4%;
+    margin: 200px auto;
+    line-height: 100px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.25);
+    border-radius: 40px;
+    font-size: 24px;
+    display: none;
+}
+#restart-button {
+    background-color: #ff4238;
+    padding: 10px 20px;
+    float: right;
+}
 .hide {
     display: none;
 }
 .correct {
-    background: green
+    background: green;
+    border: 5px solid black;
 }
 .incorrect {
     background: red
-}
-/* Media Queries */
-@media screen and (min-width: 1024px) {
-    body {
-        background: lightslategray;
-    }
-}
-@media screen and (max-width: 1024px) {
-    body {
-        background: #42a2d6;
-    }
-@media screen and (max-width: 768px) {
-    body {
-        background: #ffdc00
-    }
-}
-}
-@media screen and (max-width: 480px) {
-    body {
-        background: #ff4238;
-    }
-    .button {
-        width: 100%;
-        padding: 10px;
-        border-radius: 50px;
-        outline: none;
-        border: none;
-        margin: 10px;
-    }
 }
